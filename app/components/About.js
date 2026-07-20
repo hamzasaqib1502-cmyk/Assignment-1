@@ -30,7 +30,7 @@ const features = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-white">
+    <section id="about" className="py-10 sm:py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
           <p className="text-sm font-medium tracking-widest uppercase text-neutral-400 mb-4">
@@ -45,11 +45,11 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-3 gap-3 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group p-8 rounded-2xl border border-neutral-100 hover:border-neutral-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              className="group p-5 sm:p-8 rounded-2xl border border-neutral-100 hover:border-neutral-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
               <div className="w-12 h-12 rounded-xl bg-neutral-100 flex items-center justify-center text-black mb-5 group-hover:bg-black group-hover:text-white transition-all duration-300">
                 {feature.icon}

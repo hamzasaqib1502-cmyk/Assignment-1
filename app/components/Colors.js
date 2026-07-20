@@ -98,7 +98,7 @@ export default function Colors() {
       : { width: "50%", height: "100%", opacity: 1 };
 
   return (
-    <section id="colors" className="py-24 lg:py-32 bg-neutral-50">
+    <section id="colors" className="py-10 sm:py-24 lg:py-32 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
           <p className="text-sm font-medium tracking-widest uppercase text-neutral-400 mb-4">
@@ -112,7 +112,7 @@ export default function Colors() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
           {colors.map((color) => (
             <div
               key={color.name}
@@ -133,9 +133,9 @@ export default function Colors() {
                   </span>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold mb-2">{color.name}</h3>
-                <p className="text-neutral-500 text-sm leading-relaxed">
+              <div className="p-3 lg:p-6">
+                <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-0.5 lg:mb-2">{color.name}</h3>
+                <p className="text-neutral-500 text-[10px] lg:text-sm leading-relaxed line-clamp-2">
                   {color.description}
                 </p>
               </div>
@@ -167,7 +167,7 @@ export default function Colors() {
 
             <div className="w-full h-full flex flex-col md:flex-row">
               <div
-                className="relative flex-shrink-0 transition-all duration-500 ease-out overflow-hidden"
+                className="relative flex-shrink-0 transition-all duration-500 ease-out overflow-hidden hidden md:block"
                 style={imageStyle}
               >
                 <Image

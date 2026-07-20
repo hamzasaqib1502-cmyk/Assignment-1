@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <About />
       <Colors />
-      <section id="order" className="py-24 lg:py-32 bg-white">
+      <section id="order" className="py-10 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-md mx-auto">
             <div className="text-center mb-12">

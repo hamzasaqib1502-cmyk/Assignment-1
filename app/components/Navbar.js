@@ -67,13 +67,13 @@ export default function Navbar() {
           mobileOpen ? "max-h-64 border-t border-neutral-100" : "max-h-0"
         }`}
       >
-        <div className="px-6 py-4 space-y-3 bg-white">
+        <div className="px-6 py-4 space-y-4 bg-white flex flex-col items-center text-center">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block text-sm font-medium text-neutral-600 hover:text-black transition-colors"
+              className="block text-base font-medium text-neutral-600 hover:text-black transition-colors"
             >
               {link.label}
             </a>
@@ -81,7 +81,7 @@ export default function Navbar() {
           <a
             href="#order"
             onClick={() => setMobileOpen(false)}
-            className="inline-flex items-center px-5 py-2.5 rounded-full bg-black text-white text-sm font-medium hover:bg-neutral-800 transition-all duration-200"
+            className="inline-flex items-center px-5 py-2.5 rounded-full bg-black text-white text-base font-medium hover:bg-neutral-800 transition-all duration-200"
           >
             Order Form
           </a>
