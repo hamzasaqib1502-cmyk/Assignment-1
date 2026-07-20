@@ -9,6 +9,7 @@ export default function OrderForm({ initialColor = "" }) {
   const [waist, setWaist] = useState("");
   const [length, setLength] = useState("");
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [message, setMessage] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -75,8 +76,10 @@ export default function OrderForm({ initialColor = "" }) {
       if (!res.ok) {
         setMessage({ type: "error", text: data.error || "Something went wrong." });
       } else {
-        setMessage({ type: "success", text: data.message });
+        setMessage(null);
+        setSuccess(true);
         resetForm();
+        setTimeout(() => setSuccess(false), 1500);
       }
     } catch (err) {
       setMessage({
@@ -177,11 +180,15 @@ export default function OrderForm({ initialColor = "" }) {
 
       <button
         type="submit"
-        disabled={loading}
-        className="w-full py-4 rounded-full bg-black text-white font-medium text-sm hover:bg-neutral-800 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+        disabled={loading || success}
+        className={`w-full py-4 min-h-[56px] rounded-full font-medium text-sm transition-all duration-500 ease-in-out hover:scale-[1.02] active:scale-[0.98] disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center ${
+          success
+            ? "bg-green-500 text-white scale-100"
+            : "bg-black text-white hover:bg-neutral-800 disabled:opacity-50"
+        }`}
       >
         {loading ? (
-          <span className="inline-flex items-center gap-2">
+          <span className="inline-flex items-center justify-center gap-2">
             <svg
               className="animate-spin h-4 w-4"
               viewBox="0 0 24 24"
@@ -203,6 +210,29 @@ export default function OrderForm({ initialColor = "" }) {
             </svg>
             Placing Order...
           </span>
+        ) : success ? (
+          <span className="inline-flex items-center justify-center gap-3 text-base">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{ width: 26, height: 26 }}
+            >
+              <path
+                className="stroke-white"
+                d="M5 13l4 4L19 7"
+                style={{
+                  strokeDasharray: 24,
+                  strokeDashoffset: 24,
+                  animation: "tickDraw 0.4s 0.1s ease-out forwards",
+                }}
+              />
+            </svg>
+            Order Confirmed!
+          </span>
         ) : (
           "Place Order"
         )}
@@ -211,9 +241,9 @@ export default function OrderForm({ initialColor = "" }) {
       {message && (
         <div
           className={`p-4 rounded-xl text-sm font-medium text-center transition-all duration-300 ${
-            message.type === "success"
-              ? "bg-green-50 text-green-700 border border-green-200"
-              : "bg-red-50 text-red-700 border border-red-200"
+            message.type === "error"
+              ? "bg-red-50 text-red-700 border border-red-200"
+              : ""
           }`}
         >
           {message.text}

@@ -48,3 +48,7 @@ body {
 .animate-slide-up {
   animation: slideUp 0.3s ease forwards;
 }
+
+@keyframes tickDraw {
+  to { stroke-dashoffset: 0; }
+}
