@@ -79,7 +79,7 @@ export default function OrderForm({ initialColor = "" }) {
         setMessage(null);
         setSuccess(true);
         resetForm();
-        setTimeout(() => setSuccess(false), 1500);
+        setTimeout(() => setSuccess(false), 2500);
       }
     } catch (err) {
       setMessage({

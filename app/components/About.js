@@ -30,9 +30,9 @@ const features = [
 
 export default function About() {
   return (
-    <section id="about" className="py-10 sm:py-24 lg:py-32 bg-white">
+    <section id="about" className="py-10 md:py-16 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
+        <div className="text-center max-w-2xl mx-auto mb-16 md:mb-10 lg:mb-20">
           <p className="text-sm font-medium tracking-widest uppercase text-neutral-400 mb-4">
             Why Choose Us
           </p>

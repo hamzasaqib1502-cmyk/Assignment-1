@@ -4,16 +4,16 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-20 bg-white overflow-hidden"
+      className="hero-section relative pt-32 pb-24 bg-white overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-8 items-center">
-          <div className="space-y-8 text-center lg:text-left md:order-1 order-2">
+        <div className="hero-grid grid md:grid-cols-2 gap-12 md:gap-8 items-center">
+          <div className="hero-text space-y-8 md:space-y-6 lg:space-y-8 text-center lg:text-left md:order-1 order-2">
             <div className="space-y-4">
               <p className="text-base font-medium tracking-widest uppercase text-neutral-400">
                 New Collection 2026
               </p>
-              <h1 className="text-6xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.95]">
+              <h1 className="hero-heading text-6xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.95]">
                 Premium
                 <br />
                 <span className="font-light">Baggy</span>

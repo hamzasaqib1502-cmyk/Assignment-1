@@ -98,7 +98,7 @@ export default function Colors() {
       : { width: "50%", height: "100%", opacity: 1 };
 
   return (
-    <section id="colors" className="py-10 sm:py-24 lg:py-32 bg-neutral-50">
+    <section id="colors" className="py-10 md:py-16 lg:py-32 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
           <p className="text-sm font-medium tracking-widest uppercase text-neutral-400 mb-4">
@@ -112,7 +112,7 @@ export default function Colors() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
+        <div className="colors-grid grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
           {colors.map((color) => (
             <div
               key={color.name}
